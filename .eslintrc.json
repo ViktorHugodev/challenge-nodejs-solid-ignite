@@ -17,8 +17,8 @@
   },
   "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "prettier"],
   "rules": {
+    "prettier/prettier": "warn",
     "camelcase": "off",
-    "prettier/prettier": "error",
     "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
       "error",
@@ -38,6 +38,8 @@
     "no-useless-constructor": "off",
     "no-empty-function": "off",
     "lines-between-class-members": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+  //  " @typescript-eslint/no-empty-function": "",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -48,7 +50,6 @@
     "import-helpers/order-imports": [
       "warn",
       {
-        // example configuration
         "newlinesBetween": "always",
         "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
         "alphabetize": { "order": "asc", "ignoreCase": true }
@@ -56,7 +57,7 @@
     ],
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": ["**/*.spec.ts"] }
+      { "devDependencies": ["**/*.spec.js"] }
     ]
   },
   "settings": {

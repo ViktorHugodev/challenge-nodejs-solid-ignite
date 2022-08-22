@@ -1,13 +1,15 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express'
 
-import { TurnUserAdminUseCase } from "./TurnUserAdminUseCase";
+import { TurnUserAdminUseCase } from './TurnUserAdminUseCase'
 
 class TurnUserAdminController {
   constructor(private turnUserAdminUseCase: TurnUserAdminUseCase) {}
 
   handle(request: Request, response: Response): Response {
-    // Complete aqui
+    const { user_id } = request.params
+    this.turnUserAdminUseCase.execute({ user_id })
+    return response.status(201).json({ message: `User is admin now` })
   }
 }
 
-export { TurnUserAdminController };
+export { TurnUserAdminController }

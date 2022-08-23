@@ -6,9 +6,13 @@ class TurnUserAdminController {
   constructor(private turnUserAdminUseCase: TurnUserAdminUseCase) {}
 
   handle(request: Request, response: Response): Response {
-    const { user_id } = request.params
-    this.turnUserAdminUseCase.execute({ user_id })
-    return response.status(201).json({ message: `User is admin now` })
+    try {
+      const { user_id } = request.params
+      this.turnUserAdminUseCase.execute({ user_id })
+      return response.status(201).json({ message: 'User is admin' })
+    } catch (err) {
+      return response.status(404).json({ error: err.message })
+    }
   }
 }
 

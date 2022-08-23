@@ -2,7 +2,7 @@
 
 ## Dependency Inversion Principle (DIP)
 
-<img src="./.github/swagger.png" width="500px">
+<img src="./.github/solid.png" width="500px">
 
 > "The Dependency Inversion Principle (DIP) tells us that the most flexible systems are those in which source code dependencies refer only to abstractions, not to concretions" - Uncle bob.
 
